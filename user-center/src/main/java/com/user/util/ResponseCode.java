@@ -9,6 +9,7 @@ package com.user.util;
 public enum ResponseCode {
     SUCCESS("0","成功"),
     ERROR("1","系统错误"),
+    REQUEST_PARAM_ERROR("1","请求参数错误！"),
 
     ;
 

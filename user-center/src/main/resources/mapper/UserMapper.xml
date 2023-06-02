@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN " "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.user.mapper.UserMapper">
+
+    <sql id="BaseColumns">
+        u.id AS id,
+        u.uname AS uname,
+        u.sex AS sex,
+        u.age AS age,
+        u.birthday AS birthday,
+        u.nation AS nation,
+        u.phone AS phone,
+        u.email AS email,
+        u.address AS address,
+        u.marriage AS marriage,
+        u.education AS education,
+        u.identity AS identity,
+        u.nationality AS nationality,
+        u.flag AS flag,
+        u.create_by AS createBy,
+        u.create_time AS createTime,
+        u.update_by AS updateBy,
+        u.update_time AS updateTime
+    </sql>
+
+    <select id="findUser" resultType="com.user.entity.User">
+        SELECT
+            <include refid="BaseColumns"/>
+        FROM t_user u
+        <where>
+            u.flag = 0
+            <if test="id != null and id != ''">
+                AND u.id = #{id}
+            </if>
+            <if test="uname != null and uname != ''">
+                AND u.uname = #{uname}
+            </if>
+            <if test="phone != null and phone != ''">
+                AND u.phone = #{phone}
+            </if>
+            <if test="identity != null and identity != ''">
+                AND u.identity = #{identity}
+            </if>
+        </where>
+    </select>
+</mapper>

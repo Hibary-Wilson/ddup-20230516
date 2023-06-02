@@ -44,4 +44,9 @@ public class ResultUtil<T> implements Serializable {
         return resultUtil;
     }
 
+    public void setCodeAndInfo(ResponseCode responseCode) {
+        this.code = responseCode.getCode();
+        this.info = responseCode.getInfo();
+    }
+
 }

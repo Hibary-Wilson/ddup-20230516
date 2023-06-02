@@ -1,0 +1,22 @@
+create table user (
+    `id` BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+    `uname` VARCHAR(20) DEFAULT NULL COMMENT '姓名',
+    `sex` VARCHAR(1) DEFAULT NULL COMMENT '性别',
+    `age` VARCHAR(3) DEFAULT NULL COMMENT '年龄',
+    `birthday` date DEFAULT NULL COMMENT '出生日期',
+    `nation` VARCHAR(10) DEFAULT NULL COMMENT '名族',
+    `phone` VARCHAR(11) DEFAULT NULL COMMENT '手机号',
+    `email` VARCHAR(20) DEFAULT NULL COMMENT '邮箱',
+    `address` VARCHAR(50) DEFAULT NULL COMMENT '居住地址',
+    `marriage` VARCHAR(1) DEFAULT NULL COMMENT '婚姻状况',
+    `education` VARCHAR(2) DEFAULT NULL COMMENT '教育程度',
+    `identity` VARCHAR(18) DEFAULT NULL COMMENT '证件号码',
+    `nationality` VARCHAR(20) DEFAULT NULL COMMENT '国籍',
+    `flag` VARCHAR(1) DEFAULT NULL COMMENT '删除标记',
+    `create_by` VARCHAR(64) DEFAULT NULL COMMENT '创建人',
+    `create_time` datetime DEFAULT NULL COMMENT '创建日期',
+    `update_by` VARCHAR(64) DEFAULT NULL COMMENT '修改人',
+    `update_time` datetime DEFAULT NULL COMMENT '更新日期',
+    INDEX `idx_phone`(`phone`),
+    INDEX `idx_identity`(`identity`)
+) ENGINE=INNODB COMMENT '用户表';
